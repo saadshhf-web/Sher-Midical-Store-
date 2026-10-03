@@ -1,0 +1,6 @@
+{
+  "name": "SHER MEDICAL STORE",
+  "description": "Complete Medical Store Management System - Professional offline-first pharmacy desktop web application.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

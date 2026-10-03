@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Print Styles */
+@media print {
+  /* Hide all non-printable elements */
+  body * {
+    visibility: hidden;
+  }
+  
+  #printable-content, #printable-content * {
+    visibility: visible;
+  }
+
+  #printable-content {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  /* Specific rule for thermal 80mm */
+  .thermal-receipt {
+    width: 78mm !important;
+    max-width: 78mm !important;
+    font-size: 11px !important;
+    line-height: 1.25 !important;
+    padding: 4mm !important;
+  }
+
+  @page {
+    margin: 10mm;
+  }
+  
+  @page thermal {
+    size: 80mm auto;
+    margin: 0;
+  }
+}
